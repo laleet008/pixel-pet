@@ -143,4 +143,85 @@ Pixel Pet
 ```
 
 Happy hatching! 🥚✨
-# pixel-pet
+
+## 🎨 Portfolio / social assets
+
+Use these hand-made SVGs to link from your portfolio, LinkedIn, X/Twitter, Notion, or personal site. Files live in `portfolio/` (push this folder to GitHub so the links resolve).
+
+### 1. Large thumbnail (1200×630, opengraph/OG size — portfolio hero, cards, tweets)
+
+**File:** `portfolio/pixel-pet-thumbnail.svg`
+
+✅ Shows device mockup, stage strip (🥚 Egg → Baby → Child → Teen → Adult ×3), action buttons, vitals bars, LIVE + SOURCE clickable pill buttons that go straight to your app.
+
+**Markdown (paste into README / Notion / LinkedIn post):**
+
+```md
+[![Pixel Pet — thumbnail](portfolio/pixel-pet-thumbnail.svg)](https://pixel-pet-nine.vercel.app/)
+```
+
+**HTML (paste into a portfolio website):**
+
+```html
+<a href="https://pixel-pet-nine.vercel.app/" target="_blank" rel="noopener noreferrer">
+  <img
+    src="portfolio/pixel-pet-thumbnail.svg"
+    alt="Pixel Pet — A Tamagotchi-style browser pet (Hatch → Baby → Child → Teen → Adult × 3 variants)"
+    width="1200"
+    height="630"
+    loading="lazy"
+    style="max-width:100%; height:auto; border-radius: 16px;"
+  />
+</a>
+```
+
+### 2. Animated banner (900×280 — inline portfolio/project card, CSS animations)
+
+**File:** `portfolio/pixel-pet-banner-animated.svg`
+
+✅ Clickable `<svg onclick="window.open(...)">` → opens `pixel-pet-nine.vercel.app` in a new tab.
+✅ CSS-only animations (no JS): pet bob, eyelids blink, floating Z letters, sparkle pulse, shiny shine sweep on the PLAY pill.
+✅ Honors `prefers-reduced-motion` → all animations pause automatically.
+
+**Markdown (GitHub README / Notion — GitHub sanitizes onclick, so wrap in <a>):**
+
+```md
+[![Pixel Pet banner](portfolio/pixel-pet-banner-animated.svg)](https://pixel-pet-nine.vercel.app/)
+```
+
+**HTML for your personal portfolio (keeps the inline onclick jump):**
+
+```html
+<object
+  type="image/svg+xml"
+  data="portfolio/pixel-pet-banner-animated.svg"
+  width="900"
+  height="280"
+  style="max-width:100%; height:auto; border-radius: 16px;"
+>
+  <a href="https://pixel-pet-nine.vercel.app/" target="_blank" rel="noopener noreferrer">
+    Pixel Pet · Virtual browser pet — play live
+  </a>
+</object>
+```
+
+### 3. GitHub social preview (Settings → Social preview)
+
+Go to your repo → **Settings** → **General** → **Social preview** → **Edit** → Upload the thumbnail SVG (or export the 1200×630 SVG to PNG via browser "Open image → Save as PNG"). Done — now anyone pasting your GitHub link on Discord / Slack / X / LinkedIn gets a beautiful preview.
+
+### Quick: make the SVGs reachable from anywhere
+
+```bash
+cd "/Users/lalit/lalit/Pixel Pet"
+git add portfolio/ README.md
+git commit -m "docs: add portfolio thumbnail + animated banner SVGs linking to Vercel"
+git push
+```
+
+Then reference them by raw GitHub URL (works anywhere) if you don't want to copy the files into the portfolio repo:
+
+```
+https://raw.githubusercontent.com/laleet008/pixel-pet/main/portfolio/pixel-pet-thumbnail.svg
+https://raw.githubusercontent.com/laleet008/pixel-pet/main/portfolio/pixel-pet-banner-animated.svg
+```
+
